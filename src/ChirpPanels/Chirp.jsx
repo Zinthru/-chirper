@@ -1,23 +1,19 @@
-import {useState} from 'react';
-import ChirpPanels from './ChirpPanels';
+import React from 'react';
+import ChirpPost from '../ChirpPost';
 
 
-const Chirp =()=> {
-    const [status,setStatus]=useState([
-        {
-            status: 'HELLO WORLD'
-        }
-    ]);
 
-const poop = newItem => setStatus([...status,newItem]);
-
+const Chirp =({ todos })=> {
     return(
         <>
-          {/* <ChirpPanels list={status}/> */}
-          <h4>
-              Hello World!
-          </h4>
-          <p>Time Posted: **
+              <p>
+              {todos.map((todo)=>(
+                <ChirpPost text={todo.text}/>
+                ))}
+                
+              </p>
+          <p>
+                
           </p>
         </>
     )
